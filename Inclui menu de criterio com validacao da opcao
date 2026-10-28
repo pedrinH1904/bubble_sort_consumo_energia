@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+#define TAM 10
+
+int main(void) {
+    float consumo[TAM] = {12.4, 18.2, 9.8, 15.0, 22.5, 8.3, 30.7, 14.1, 11.6, 25.9};
+    int opcao;
+    int i;
+
+    printf("==============================================\n");
+    printf("   CONSUMO DIARIO DE ENERGIA - ULTIMOS 10 DIAS\n");
+    printf("==============================================\n");
+    printf("Objetivo: descobrir os dias de maior e menor consumo.\n\n");
+
+    printf("--- ANTES da ordenacao (ordem dos dias) ---\n");
+    for (i = 0; i < TAM; i++) {
+        printf("Dia %2d: %5.2f kWh\n", i + 1, consumo[i]);
+    }
+
+    do {
+        printf("\nEscolha o criterio de ordenacao:\n");
+        printf("1 - Crescente (menor consumo para o maior)\n");
+        printf("2 - Decrescente (maior consumo para o menor)\n");
+        printf("Opcao: ");
+        scanf("%d", &opcao);
+
+        if (opcao != 1 && opcao != 2) {
+            printf("Opcao invalida! Digite 1 ou 2.\n");
+        }
+    } while (opcao != 1 && opcao != 2);
+
+    return 0;
