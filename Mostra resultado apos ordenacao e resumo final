@@ -1,0 +1,69 @@
+#include <stdio.h>
+
+#define TAM 10
+
+int main(void) {
+    float consumo[TAM] = {12.4, 18.2, 9.8, 15.0, 22.5, 8.3, 30.7, 14.1, 11.6, 25.9};
+    int opcao;
+    int i, j;
+    float aux;
+
+    printf("==============================================\n");
+    printf("   CONSUMO DIARIO DE ENERGIA - ULTIMOS 10 DIAS\n");
+    printf("==============================================\n");
+    printf("Objetivo: descobrir os dias de maior e menor consumo.\n\n");
+
+    printf("--- ANTES da ordenacao (ordem dos dias) ---\n");
+    for (i = 0; i < TAM; i++) {
+        printf("Dia %2d: %5.2f kWh\n", i + 1, consumo[i]);
+    }
+
+    do {
+        printf("\nEscolha o criterio de ordenacao:\n");
+        printf("1 - Crescente (menor consumo para o maior)\n");
+        printf("2 - Decrescente (maior consumo para o menor)\n");
+        printf("Opcao: ");
+        scanf("%d", &opcao);
+
+        if (opcao != 1 && opcao != 2) {
+            printf("Opcao invalida! Digite 1 ou 2.\n");
+        }
+    } while (opcao != 1 && opcao != 2);
+
+    for (i = 0; i < TAM - 1; i++) {
+        for (j = 0; j < TAM - 1 - i; j++) {
+            if (opcao == 1) {
+                if (consumo[j] > consumo[j + 1]) {
+                    aux = consumo[j];
+                    consumo[j] = consumo[j + 1];
+                    consumo[j + 1] = aux;
+                }
+            } else {
+                if (consumo[j] < consumo[j + 1]) {
+                    aux = consumo[j];
+                    consumo[j] = consumo[j + 1];
+                    consumo[j + 1] = aux;
+                }
+            }
+        }
+    }
+
+    if (opcao == 1) {
+        printf("\nCriterio adotado: ordem CRESCENTE\n");
+    } else {
+        printf("\nCriterio adotado: ordem DECRESCENTE\n");
+    }
+
+    printf("--- DEPOIS da ordenacao ---\n");
+    for (i = 0; i < TAM; i++) {
+        printf("%2d. lugar: %5.2f kWh\n", i + 1, consumo[i]);
+    }
+
+    if (opcao == 1) {
+        printf("\nMenor consumo: %.2f kWh | Maior consumo: %.2f kWh\n", consumo[0], consumo[TAM - 1]);
+    } else {
+        printf("\nMaior consumo: %.2f kWh | Menor consumo: %.2f kWh\n", consumo[0], consumo[TAM - 1]);
+    }
+
+    return 0;
+}
