@@ -1,8 +1,9 @@
 # Gasto de energia com Bubble Sort
 
-
 **Aluno:** Pedro Henrique de Lira Tavares
+
 **Disciplina:** Algoritmos e Pensamento Computacional
+
 **Professora:** Karla Sartin
 
 
@@ -30,7 +31,7 @@ Pra mudar entre crescente e decrescente só muda o sinal da comparação: `>` pr
 
 Compilar:
 
-    gcc main.c -o programa
+    gcc ordena_consumo.c -o programa
 
 Executar:
 
@@ -59,9 +60,9 @@ Entrada: opção `1` (crescente)
     Como voce quer ordenar?
     1 - Crescente (menor pro maior)
     2 - Decrescente (maior pro menor)
-    Opcao: 1
+    Digite 1 ou 2: 1
 
-    Ordenado em ordem CRESCENTE
+    Ordem crescente (do menor gasto pro maior)
     Depois de ordenar:
     1: 8.30 kWh
     2: 9.80 kWh
@@ -72,41 +73,4 @@ Entrada: opção `1` (crescente)
     7: 18.20 kWh
     8: 22.50 kWh
     9: 25.90 kWh
-    10: 30.70 kWh
-
-Entrada: opção `2` (decrescente)
-
-    Ordenado em ordem DECRESCENTE
-    Depois de ordenar:
-    1: 30.70 kWh
-    2: 25.90 kWh
-    3: 22.50 kWh
-    4: 18.20 kWh
-    5: 15.00 kWh
-    6: 14.10 kWh
-    7: 12.40 kWh
-    8: 11.60 kWh
-    9: 9.80 kWh
-    10: 8.30 kWh
-
-Entrada: opção inválida (`5`) e depois `1`
-
-    Opcao: 5
-    Opcao invalida, digite 1 ou 2.
-
-    Como voce quer ordenar?
-    1 - Crescente (menor pro maior)
-    2 - Decrescente (maior pro menor)
-    Opcao: 1
-
-Quando digita uma opção errada o programa avisa e pergunta de novo, só continua quando for 1 ou 2.
-
-## Tecnologias e ferramentas
-
-- Linguagem C
-- OnlineGDB, pra escrever e testar o código
-- Git e GitHub, pra guardar o projeto e entregar
-
-## Considerações finais
-
-Nesse trabalho deu pra entender melhor como o Bubble Sort funciona na prática, comparando os vizinhos e trocando de lugar até ordenar tudo. O que mais me confundiu no começo foi o limite do laço de dentro (`TAM - 1 - i`), mas depois que entendi que o final do array já fica ordenado a cada passada, fez sentido. Usei o `do...while` pra validar a opção do usuário, igual fiz no trabalho de monitoramento de temperatura. Usei IA como apoio pra estudar e organizar o projeto, mas testei o programa e consigo explicar o código.
+    10:
